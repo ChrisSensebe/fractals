@@ -1,3 +1,3 @@
 # fractals
 
-fractals generator javascript/html canvas
+Générateur de fractales utilisant javascript et html5 canvas.
