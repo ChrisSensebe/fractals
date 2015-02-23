@@ -16,22 +16,41 @@
     	<![endif]-->
 	</head>
 	<body onload="launch();">
-		<div>
-			<header>
-				<h1>Fractals</h1>
+		<div class="container">
+
+			<header class="row">
+				<div class="col-md-12">
+					<h1>Fractals</h1>
+				</div>
 			</header>
-			<canvas id="canvas" width="800" height="600"></canvas>
-			<div>
-				<select id="selectFractal" onchange="launch();" autofocus>
-					<option value="sierpinskiTriangle">Sierpinski triangle</option>
-					<option value="fractalTree">fractal tree</option>
-					<option value="kochSnowflake">snowflake</option>
-				</select>
-				mombre de récursions: <input value="0" id="recursion" type="number" min="0" max="10" onchange="launch();">
-				color: <input value="#ffffff" id="color" type="color" onchange="launch();">
-				backgroundColor: <input value="#3d0c02" id="backgroundColor" type="color"  onchange="launch();">
+
+			<div class="row">
+				<div class="col-md-12">
+					<canvas id="canvas" width="800" height="600"></canvas>
+				</div>
 			</div>
+
+			<div class="row">
+				<div class="col-md-3">
+					<select id="selectFractal" onchange="launch();" autofocus>
+						<option value="sierpinskiTriangle">Sierpinski triangle</option>
+						<option value="fractalTree">fractal tree</option>
+						<option value="kochSnowflake">snowflake</option>
+					</select>
+				</div>
+				<div class="col-md-3">
+					mombre de récursions: <input value="0" id="recursion" type="number" min="0" max="10" onchange="launch();">
+				</div>
+				<div class="col-md-3">
+					color: <input value="#ffffff" id="color" type="color" onchange="launch();">
+				</div>
+				<div class="col-md-3">
+					backgroundColor: <input value="#3d0c02" id="backgroundColor" type="color"  onchange="launch();">
+				</div>
+			</div>
+
 		</div>
+
 		<script type="text/javascript" src="app.js"></script>
 		<script type="text/javascript" src="sierpinski.js"></script>
 		<script type="text/javascript" src="fractalTree.js"></script>
