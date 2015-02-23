@@ -6,33 +6,32 @@ var canvasHeight = canvas.height;
 var canvasTop = 0;
 var canvasLeft = 0;
 var maxDepth = parseInt(document.getElementById("recursion").value);
-var fractalType = document.getElementById("selectFractal").value;
 var color = document.getElementById("color").value;
 var backgroundColor = document.getElementById("backgroundColor").value;
+var fractalTree = document.getElementById("fractalTree");
+var sierpinskiTriangle = document.getElementById("sierpinskiTriangle");
+var kochSnowflake = document.getElementById("kochSnowflake");
 
-//launch app
-function launch(){
-	setVariables();
-	selectFractal();
+//clear canvas and begin drawing fractalTree
+fractalTree.onclick = function(){
+	context.clearRect(0,0,canvasWidth,canvasHeight);
+	context.fillStyle = backgroundColor;
+	context.fillRect(0,0,canvasWidth,canvasHeight);
+	fractalTree(canvasWidth/2,canvasHeight,Math.PI/2,0);
 }
 
-//set variables
-function setVariables(){
-	fractalType = document.getElementById("selectFractal").value;
-	maxDepth = parseInt(document.getElementById("recursion").value);
-	color = document.getElementById("color").value;
-	backgroundColor = document.getElementById("backgroundColor").value;
+//clear canvas and begin drawing sierpinskiTriangle
+sierpinskiTriangle.onclick = function(){
+	context.clearRect(0,0,canvasWidth,canvasHeight);
+	context.fillStyle = backgroundColor;
+	context.fillRect(0,0,canvasWidth,canvasHeight);
+	sierpinsky(0,canvasWidth,canvasHeight,canvasTop,canvasLeft);
 }
 
-//select fractal and launch generation
-function selectFractal(){
-	if (fractalType === "fractalTree") {
-		startFractalTree();
-	}
-	if(fractalType === "sierpinskiTriangle") {
-		startSierpinski();
-	}
-	if (fractalType === "kochSnowflake") {
-		startKochSnowflake();
-	}
+//clear canvas and launch drawing kochSnowflake
+kochSnowflake.onclick =  function(){
+	context.clearRect(0,0,canvasWidth,canvasHeight);
+	context.fillStyle = backgroundColor;
+	context.fillRect(0,0,canvasWidth,canvasHeight);
+	snowFlake(canvasWidth/4,2*canvasHeight/3,0,400);
 }

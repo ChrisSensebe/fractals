@@ -1,11 +1,3 @@
-//clear canvas and begin drawing
-function startSierpinski(){
-	context.clearRect(0,0,canvasWidth,canvasHeight);
-	context.fillStyle = backgroundColor;
-	context.fillRect(0,0,canvasWidth,canvasHeight);
-	sierpinsky(0,canvasWidth,canvasHeight,canvasTop,canvasLeft);
-}
-
 function sierpinsky(depth,width,height,top,left){
 	//coordinates of current triangle
 	var xa = left + width/2;

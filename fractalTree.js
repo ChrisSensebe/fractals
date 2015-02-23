@@ -1,11 +1,3 @@
-//clear canvas and begin drawing
-function startFractalTree(){
-	context.clearRect(0,0,canvasWidth,canvasHeight);
-	context.fillStyle = backgroundColor;
-	context.fillRect(0,0,canvasWidth,canvasHeight);
-	fractalTree(canvasWidth/2,canvasHeight,Math.PI/2,0);
-}
-
 //calculate branch length draw branch calculate angle of new branches 
 function fractalTree(startX,startY,angle,depth){
 	//calculate length of branch

@@ -6,16 +6,16 @@
 		<link rel="stylesheet" type="text/css" href="fractals.css">
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
 	</head>
-	<body onload="launch();">
+	<body>
 			<div class="container-fluid">
 				<nav class="navbar navbar-inverse">
 					<div class="navbar-header">
 						<a class="navbar-brand" href="#">Fractals</a>
 					</div>
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="#">Sierpinski triangle</a></li>
-						<li><a href="#">fractal tree</a></li>
-						<li><a href="#">snowflake</a></li>
+						<li class="active"><a href="#" id="sierpinskiTriangle">Sierpinski triangle</a></li>
+						<li><a href="#" id="fractalTree">fractal tree</a></li>
+						<li><a href="#" id="kochSnowflake">snowflake</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -28,8 +28,8 @@
 				<dic class="row">	
 					<div class="col-md-12">
 						mombre de récursions: <input value="0" id="recursion" type="number" min="0" max="10" onchange="launch();">
-						color: <input value="#ffffff" id="color" type="color" onchange="launch();">
-						backgroundColor: <input value="#3d0c02" id="backgroundColor" type="color"  onchange="launch();">
+						color: <input value="#ffffff" id="color" type="color">
+						backgroundColor: <input value="#3d0c02" id="backgroundColor" type="color">
 					</div>
 				</div>
 			</div>

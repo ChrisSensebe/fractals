@@ -1,11 +1,3 @@
-//clear canvas and launch drawing
-function startKochSnowflake(){
-	context.clearRect(0,0,canvasWidth,canvasHeight);
-	context.fillStyle = backgroundColor;
-	context.fillRect(0,0,canvasWidth,canvasHeight);
-	snowFlake(canvasWidth/4,2*canvasHeight/3,0,400);
-}
-
 //start drawing snowflake
 function snowFlake(startX,startY,startAngle,length){
 	var x = startX;
