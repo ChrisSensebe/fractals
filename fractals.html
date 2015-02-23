@@ -8,13 +8,16 @@
 	</head>
 	<body onload="launch();">
 			<div class="container-fluid">
-				<div class="row">
-					<div class="col-md-12">
-						<header>
-							<h1>Fractals</h1>
-						</header>
+				<nav class="navbar navbar-inverse">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#">Fractals</a>
 					</div>
-				</div>
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">Sierpinski triangle</a></li>
+						<li><a href="#">fractal tree</a></li>
+						<li><a href="#">snowflake</a></li>
+					</ul>
+				</nav>
 			</div>
 			<div class="container">
 				<div class="row">
@@ -24,11 +27,6 @@
 				</div>
 				<dic class="row">	
 					<div class="col-md-12">
-						<select id="selectFractal" onchange="launch();" autofocus>
-							<option value="sierpinskiTriangle">Sierpinski triangle</option>
-							<option value="fractalTree">fractal tree</option>
-							<option value="kochSnowflake">snowflake</option>
-						</select>
 						mombre de récursions: <input value="0" id="recursion" type="number" min="0" max="10" onchange="launch();">
 						color: <input value="#ffffff" id="color" type="color" onchange="launch();">
 						backgroundColor: <input value="#3d0c02" id="backgroundColor" type="color"  onchange="launch();">
