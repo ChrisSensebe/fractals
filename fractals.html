@@ -7,22 +7,34 @@
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
 	</head>
 	<body onload="launch();">
-		<div>
-			<header>
-				<h1>Fractals</h1>
-			</header>
-			<canvas id="canvas" width="800" height="600"></canvas>
-			<div>
-				<select id="selectFractal" onchange="launch();" autofocus>
-					<option value="sierpinskiTriangle">Sierpinski triangle</option>
-					<option value="fractalTree">fractal tree</option>
-					<option value="kochSnowflake">snowflake</option>
-				</select>
-				mombre de récursions: <input value="0" id="recursion" type="number" min="0" max="10" onchange="launch();">
-				color: <input value="#ffffff" id="color" type="color" onchange="launch();">
-				backgroundColor: <input value="#3d0c02" id="backgroundColor" type="color"  onchange="launch();">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<header>
+							<h1>Fractals</h1>
+						</header>
+					</div>
+				</div>
 			</div>
-		</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<canvas id="canvas" width="800" height="600"></canvas>
+					</div>
+				</div>
+				<dic class="row">	
+					<div class="col-md-12">
+						<select id="selectFractal" onchange="launch();" autofocus>
+							<option value="sierpinskiTriangle">Sierpinski triangle</option>
+							<option value="fractalTree">fractal tree</option>
+							<option value="kochSnowflake">snowflake</option>
+						</select>
+						mombre de récursions: <input value="0" id="recursion" type="number" min="0" max="10" onchange="launch();">
+						color: <input value="#ffffff" id="color" type="color" onchange="launch();">
+						backgroundColor: <input value="#3d0c02" id="backgroundColor" type="color"  onchange="launch();">
+					</div>
+				</div>
+			</div>
 		<script type="text/javascript" src="app.js"></script>
 		<script type="text/javascript" src="sierpinski.js"></script>
 		<script type="text/javascript" src="fractalTree.js"></script>
