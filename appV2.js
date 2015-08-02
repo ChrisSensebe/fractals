@@ -87,7 +87,7 @@ function kochSnowflake(startX,startY,startAngle,length){
 	// draw triangle side
     function drawSide(startX,startY,angle,length,depth){
         // max recursion draw a strait line
-        if (depth === recursionDepth) {
+        if (depth == recursionDepth) {
 		context.lineTo(startX+length*Math.cos(angle),startY+length*Math.sin(angle));
         }
         // draw a side _/\_ if max depth not reached
