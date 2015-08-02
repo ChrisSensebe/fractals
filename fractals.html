@@ -4,32 +4,32 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title>fractals</title>
 		<meta charset="utf-8">
-    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="fractals.css">
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-   		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    	<!--[if lt IE 9]>
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
      	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    	<![endif]-->
+		<![endif]-->
 	</head>
 	<body>
 		<div class="container">
-
+				
 			<header class="row">
 				<div class="col-md-12">
 					<h1>Fractals</h1>
 				</div>
 			</header>
-
+				
 			<div class="row">
 				<div class="col-md-12">
 					<canvas id="canvas" width="800" height="600"></canvas>
 				</div>
 			</div>
-
+				
 			<div class="row">
 				<div class="col-md-3">
 					<select id="selectFractal" class="redraw" autofocus>
@@ -39,7 +39,7 @@
 					</select>
 				</div>
 				<div class="col-md-3">
-					recursions: <input value="0" id="recursion" class="redraw" type="number" min="0" max="7">
+					recursions: <input value="0" id="recursion" class="redraw" type="range" min="0" max="7">
 				</div>
 				<div class="col-md-3">
 					color: <input value="#ffffff" id="color" class="redraw" type="color">
@@ -48,12 +48,12 @@
 					backgroundColor: <input value="#3d0c02" id="backgroundColor" class="redraw" type="color">
 				</div>
 			</div>
-
+				
 		</div>
-
+			
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="fractals.js"></script>
-
+			
 	</body>
 </html>
