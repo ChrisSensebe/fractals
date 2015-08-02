@@ -12,7 +12,7 @@ var backgroundColor = document.getElementById("backgroundColor").value;
 
 //launch app
 $('body').onload = launch();
-$('.go').change(function(){
+$('.redraw').change(function(){
 	launch();
 });
 
