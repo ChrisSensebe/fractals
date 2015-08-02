@@ -15,7 +15,7 @@
       	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     	<![endif]-->
 	</head>
-	<body onload="launch();">
+	<body>
 		<div class="container">
 
 			<header class="row">
@@ -32,31 +32,31 @@
 
 			<div class="row">
 				<div class="col-md-3">
-					<select id="selectFractal" onchange="launch();" autofocus>
+					<select id="selectFractal" class="go" autofocus>
 						<option value="sierpinskiTriangle">Sierpinski triangle</option>
 						<option value="fractalTree">fractal tree</option>
 						<option value="kochSnowflake">snowflake</option>
 					</select>
 				</div>
 				<div class="col-md-3">
-					recursions: <input value="0" id="recursion" type="number" min="0" max="10" onchange="launch();">
+					recursions: <input value="0" id="recursion" class="go" type="number" min="0" max="10">
 				</div>
 				<div class="col-md-3">
-					color: <input value="#ffffff" id="color" type="color" onchange="launch();">
+					color: <input value="#ffffff" id="color" class="go" type="color">
 				</div>
 				<div class="col-md-3">
-					backgroundColor: <input value="#3d0c02" id="backgroundColor" type="color"  onchange="launch();">
+					backgroundColor: <input value="#3d0c02" id="backgroundColor" class="go" type="color">
 				</div>
 			</div>
 
 		</div>
 
-		<script type="text/javascript" src="app.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="sierpinski.js"></script>
 		<script type="text/javascript" src="fractalTree.js"></script>
 		<script type="text/javascript" src="kochSnowflake.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
 
 	</body>
 </html>

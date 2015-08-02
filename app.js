@@ -11,6 +11,11 @@ var color = document.getElementById("color").value;
 var backgroundColor = document.getElementById("backgroundColor").value;
 
 //launch app
+$('body').onload = launch();
+$('.go').change(function(){
+	launch();
+});
+
 function launch(){
 	setVariables();
 	selectFractal();
