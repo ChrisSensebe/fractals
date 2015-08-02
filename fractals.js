@@ -6,6 +6,7 @@ var context         = canvas.getContext('2d');
 var canvasHeight    = canvas.height;
 var canvasWidth     = canvas.width;
 
+// launch fractal drawing
 $('body').onload = drawFractal();
 $('.redraw').change(function(){
 	drawFractal();
@@ -22,12 +23,23 @@ function drawFractal(){
 // select fractal
 function select(){
 	if ($('#selectFractal').val() === "fractalTree") {
+	    $('#recursion').attr({max:10});
 		fractalTree(canvasWidth/2,canvasHeight,Math.PI/2,0);
 	}
 	else if ($('#selectFractal').val() === "kochSnowflake") {
+        $('#recursion').attr({max:7});
+        if($('#recursion').val()>7){
+            $('#recursion').val(7);
+            recursionDepth  = 7;
+        }
 		kochSnowflake(canvasWidth/4,2*canvasHeight/3,0,400);
 	}
 	else if($('#selectFractal').val() === "sierpinskiTriangle") {
+	    $('#recursion').attr({max:7});
+	    if($('#recursion').val()>7){
+            $('#recursion').val(7);
+            recursionDepth  = 7;
+        }
 		sierpinskiTriangle(0,canvasWidth,canvasHeight,0,0);
 	}
 }
