@@ -24,6 +24,7 @@ function snowFlake(startX,startY,startAngle,length){
 	context.fill();
 }
 
+//draw triangle side
 function drawSide(startX,startY,angle,length,depth){
 	// max recursion 7 (for performance) draw a strait line
 	if (depth === maxDepth || depth >= 7) {
