@@ -108,7 +108,7 @@ function kochSnowflake(startX,startY,startAngle,length){
     }
 }
 
-// calculate & draw sierpinskytriangle
+// calculate & draw sierpinskitriangle
 function sierpinskiTriangle(depth,width,height,top,left){
 	//coordinates of current triangle
 	var xa = left + width/2;
