@@ -1,8 +1,8 @@
 var recursionDepth;
 var color;
 var backgroundColor;
-var canvas          = $('#canvas').get(0);
-var context         = canvas.getContext('2d');
+var canvas;
+var context;
 var canvasHeight;
 var canvasWidth;
 
@@ -19,17 +19,20 @@ $('.redraw').change(function(){
 function drawFractal(){
     color           = $('#color').val();
     backgroundColor = $('#backgroundColor').val();
+    canvas = $('#canvas').get(0);
+    context = canvas.getContext('2d');
     canvasHeight    = canvas.height;
     canvasWidth     = canvas.width;
     clearRect();
     select();
 }
 
-// select fractal
+// select fractal & update variables
 function select(){
 	if ($('#selectFractal').val() === "fractalTree") {
 	    $('#recursion').attr({max:10});
 	    recursionDepth  = $('#recursion').val();
+	    $('#depth').html($('#recursion').val());
 		fractalTree(canvasWidth/2,canvasHeight,Math.PI/2,0);
 	}
 	else if ($('#selectFractal').val() === "kochSnowflake") {
@@ -38,6 +41,7 @@ function select(){
             $('#recursion').val(7);
         }
         recursionDepth  = $('#recursion').val();
+        $('#depth').html($('#recursion').val());
 		kochSnowflake(canvasWidth/4,2*canvasHeight/3,0,400);
 	}
 	else if($('#selectFractal').val() === "sierpinskiTriangle") {
@@ -46,6 +50,7 @@ function select(){
             $('#recursion').val(7);
         }
         recursionDepth  = $('#recursion').val();
+        $('#depth').html($('#recursion').val());
 		sierpinskiTriangle(0,canvasWidth,canvasHeight,0,0);
 	}
 }
