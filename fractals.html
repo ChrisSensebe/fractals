@@ -26,27 +26,19 @@
 				
 			<div class="row">
 				<div class="col-md-12">
-					<canvas id="canvas" width="800" height="600"></canvas>
+					<canvas id="canvas"></canvas>
 				</div>
 			</div>
 				
 			<div class="row">
-				<div class="col-md-3">
-					<select id="selectFractal" class="redraw" autofocus>
-						<option value="sierpinskiTriangle">Sierpinski triangle</option>
-						<option value="fractalTree">fractal tree</option>
-						<option value="kochSnowflake">snowflake</option>
-					</select>
-				</div>
-				<div class="col-md-3">
-					recursions: <input value="0" id="recursion" class="redraw" type="range" min="0" max="7">
-				</div>
-				<div class="col-md-3">
-					color: <input value="#ffffff" id="color" class="redraw" type="color">
-				</div>
-				<div class="col-md-3">
-					backgroundColor: <input value="#3d0c02" id="backgroundColor" class="redraw" type="color">
-				</div>
+				<select id="selectFractal" class="redraw" autofocus>
+					<option value="sierpinskiTriangle">Sierpinski triangle</option>
+					<option value="fractalTree">fractal tree</option>
+					<option value="kochSnowflake">snowflake</option>
+				</select>
+				recursions: <input value="0" id="recursion" class="redraw" type="range" min="0" max="7">
+				color: <input value="#ffffff" id="color" class="redraw" type="color">
+				backgroundColor: <input value="#3d0c02" id="backgroundColor" class="redraw" type="color">
 			</div>
 				
 		</div>

@@ -3,8 +3,12 @@ var color;
 var backgroundColor;
 var canvas          = $('#canvas').get(0);
 var context         = canvas.getContext('2d');
-var canvasHeight    = canvas.height;
-var canvasWidth     = canvas.width;
+var canvasHeight;
+var canvasWidth;
+
+// canvas width & height
+$("#canvas").attr("width", "800px");
+$("#canvas").attr("height", "600px");
 
 // launch fractal drawing
 $('body').onload = drawFractal();
@@ -15,6 +19,8 @@ $('.redraw').change(function(){
 function drawFractal(){
     color           = $('#color').val();
     backgroundColor = $('#backgroundColor').val();
+    canvasHeight    = canvas.height;
+    canvasWidth     = canvas.width;
     clearRect();
     select();
 }
