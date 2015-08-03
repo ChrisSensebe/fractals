@@ -28,21 +28,30 @@
 				<div class="col-md-12">
 					<canvas id="canvas"></canvas>
 				</div>
-			</div>
-				
+			</div>	
 			<div class="row">
-				<select id="selectFractal" class="redraw" autofocus>
-					<option value="fractalTree">fractal tree</option>
-					<option value="sierpinskiTriangle">Sierpinski triangle</option>
-					<option value="kochSnowflake">snowflake</option>
-				</select>
-				recursions: <input value="10" id="recursion" class="redraw" type="range" min="0" max="10">
-				color: <input value="#ffffff" id="color" class="redraw" type="color">
-				backgroundColor: <input value="#3d0c02" id="backgroundColor" class="redraw" type="color">
+				<div class="col-md-3">
+					<select id="selectFractal" class="redraw form-control" autofocus>
+						<option value="fractalTree">fractal tree</option>
+						<option value="sierpinskiTriangle">Sierpinski triangle</option>
+						<option value="kochSnowflake">snowflake</option>
+					</select>
+					Drawing
+				</div>
+			<div class="col-md-3">
+				<input value="10" id="recursion" class="redraw form-control" type="range" min="0" max="10">
+				Depth : <span id="depth">10</span>
 			</div>
-				
+			<div class="col-md-3">
+				<input value="#ffffff" id="color" class="redraw form-control" type="color">
+				Color or hexadecimal value
+			</div>
+			<div class="col-md-3">
+				<input value="#3d0c02" id="backgroundColor" class="redraw form-control" type="color">
+				Background or hexadecimal value
+			</div>
 		</div>
-			
+		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="fractals.js"></script>
