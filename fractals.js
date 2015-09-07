@@ -13,7 +13,7 @@ $("#canvas").attr("height", "600px");
 // launch fractal drawing
 $('body').onload = drawFractal();
 $('.redraw').change(function(){
-	drawFractal();
+    drawFractal();
 });
 
 function drawFractal(){
@@ -29,57 +29,57 @@ function drawFractal(){
 
 // select fractal & update variables
 function select(){
-	if ($('#selectFractal').val() === "fractalTree") {
-	    $('#recursion').attr({max:10});
-	    recursionDepth  = $('#recursion').val();
-	    $('#depth').html($('#recursion').val());
-		fractalTree(canvasWidth/2,canvasHeight,Math.PI/2,0);
-	}
-	else if ($('#selectFractal').val() === "kochSnowflake") {
+    if ($('#selectFractal').val() === "fractalTree") {
+        $('#recursion').attr({max:10});
+        recursionDepth  = $('#recursion').val();
+        $('#depth').html($('#recursion').val());
+        fractalTree(canvasWidth/2,canvasHeight,Math.PI/2,0);
+    }
+    else if ($('#selectFractal').val() === "kochSnowflake") {
         $('#recursion').attr({max:7});
         if($('#recursion').val()>7){
             $('#recursion').val(7);
         }
         recursionDepth  = $('#recursion').val();
         $('#depth').html($('#recursion').val());
-		kochSnowflake(canvasWidth/4,2*canvasHeight/3,0,400);
-	}
-	else if($('#selectFractal').val() === "sierpinskiTriangle") {
-	    $('#recursion').attr({max:7});
-	    if($('#recursion').val()>7){
+        kochSnowflake(canvasWidth/4,2*canvasHeight/3,0,400);
+    }
+    else if($('#selectFractal').val() === "sierpinskiTriangle") {
+        $('#recursion').attr({max:7});
+        if($('#recursion').val()>7){
             $('#recursion').val(7);
         }
         recursionDepth  = $('#recursion').val();
         $('#depth').html($('#recursion').val());
-		sierpinskiTriangle(0,canvasWidth,canvasHeight,0,0);
-	}
+        sierpinskiTriangle(0,canvasWidth,canvasHeight,0,0);
+    }
 }
 
 // clear canvas
 function clearRect(){
     context.clearRect(0,0,this.canvasWidth,this.canvasHeight);
     context.fillStyle = backgroundColor;
-	context.fillRect(0,0,this.canvasWidth,this.canvasHeight);
+    context.fillRect(0,0,this.canvasWidth,this.canvasHeight);
 }
 
 // calculate & draw fractaltree
 function fractalTree(startX,startY,angle,depth){
     // calculate length of branch
-	var targetX = startX + 115*(Math.pow(.8,depth))*Math.cos(angle);
-	var targetY = startY - 115*(Math.pow(.8,depth))*Math.sin(angle);
-	drawBranch(depth,startX,startY,targetX,targetY);
-	if (depth < recursionDepth) {
-		// calculate angle of new branches
-		var newDepth     = depth +1;
-		var angle1       = angle - Math.random()*Math.PI/2 +Math.PI/4;
-		var angle2       = angle - Math.random()*Math.PI/2 +Math.PI/4;
-		var newStartX    = targetX;
-		var newStartY    = targetY;
-		// recursive calls
-		fractalTree(newStartX,newStartY,angle1,newDepth);
-		fractalTree(newStartX,newStartY,angle2,newDepth);
-	}
-	// draw branch
+    var targetX = startX + 115*(Math.pow(.8,depth))*Math.cos(angle);
+    var targetY = startY - 115*(Math.pow(.8,depth))*Math.sin(angle);
+    drawBranch(depth,startX,startY,targetX,targetY);
+    if (depth < recursionDepth) {
+        // calculate angle of new branches
+        var newDepth     = depth +1;
+        var angle1       = angle - Math.random()*Math.PI/2 +Math.PI/4;
+        var angle2       = angle - Math.random()*Math.PI/2 +Math.PI/4;
+        var newStartX    = targetX;
+        var newStartY    = targetY;
+        // recursive calls
+        fractalTree(newStartX,newStartY,angle1,newDepth);
+        fractalTree(newStartX,newStartY,angle2,newDepth);
+    }
+    // draw branch
     function drawBranch(depth,startX,startY,targetX,targetY){
         context.strokeStyle = color;
         context.beginPath();
@@ -94,24 +94,24 @@ function fractalTree(startX,startY,angle,depth){
 // calculate & draw kochsnowflake
 function kochSnowflake(startX,startY,startAngle,length){
     var x = startX;
-	var y = startY;
-	var angle =startAngle;
-	context.beginPath();
-	context.moveTo(startX,startY);
-	// draw first triangle
-	for (var i = 0; i < 3; i++) {
-		drawSide(x,y,angle,length,0);
-		x = x + length*Math.cos(angle);
-		y = y + length*Math.sin(angle);
-		angle = angle + 4*Math.PI/3;
-	}
-	context.fillStyle = color;
-	context.fill();
-	// draw triangle side
+    var y = startY;
+    var angle =startAngle;
+    context.beginPath();
+    context.moveTo(startX,startY);
+    // draw first triangle
+    for (var i = 0; i < 3; i++) {
+        drawSide(x,y,angle,length,0);
+        x = x + length*Math.cos(angle);
+        y = y + length*Math.sin(angle);
+        angle = angle + 4*Math.PI/3;
+    }
+    context.fillStyle = color;
+    context.fill();
+    // draw triangle side
     function drawSide(startX,startY,angle,length,depth){
         // max recursion draw a strait line
         if (depth == recursionDepth) {
-		context.lineTo(startX+length*Math.cos(angle),startY+length*Math.sin(angle));
+        context.lineTo(startX+length*Math.cos(angle),startY+length*Math.sin(angle));
         }
         // draw a side _/\_ if max depth not reached
         else{
@@ -133,35 +133,35 @@ function kochSnowflake(startX,startY,startAngle,length){
 
 // calculate & draw sierpinskitriangle
 function sierpinskiTriangle(depth,width,height,top,left){
-	//coordinates of current triangle
-	var xa = left + width/2;
-	var ya = top;
-	var xb = left;
-	var yb = top + height;
-	var xc = left + width;
-	var yc = top + height;
-	// draw triangle if maxDepth reached
-	if (depth == recursionDepth) {
-		drawTriangle(xa,xb,xc,ya,yb,yc);
-	}
-	else{
-		var newDepth = depth + 1;
-		// determine top/left & height/width for next 3 triangles
-		var newHeight = height/2;
-		var newWidth  = width/2;
-		var top1      = top;
-		var left1     = left + width/4;
-		var top2      = top + height/2;
-		var left2     = left;
-		var top3      = top + height/2;
-		var left3     = left + width/2;
-		// recursive calls
-		sierpinskiTriangle(newDepth,newWidth,newHeight,top1,left1);
-		sierpinskiTriangle(newDepth,newWidth,newHeight,top2,left2);
-		sierpinskiTriangle(newDepth,newWidth,newHeight,top3,left3);
-	}
-	// draw triangle
-	function drawTriangle(xa,xb,xc,ya,yb,yc){
+    //coordinates of current triangle
+    var xa = left + width/2;
+    var ya = top;
+    var xb = left;
+    var yb = top + height;
+    var xc = left + width;
+    var yc = top + height;
+    // draw triangle if maxDepth reached
+    if (depth == recursionDepth) {
+        drawTriangle(xa,xb,xc,ya,yb,yc);
+    }
+    else{
+        var newDepth = depth + 1;
+        // determine top/left & height/width for next 3 triangles
+        var newHeight = height/2;
+        var newWidth  = width/2;
+        var top1      = top;
+        var left1     = left + width/4;
+        var top2      = top + height/2;
+        var left2     = left;
+        var top3      = top + height/2;
+        var left3     = left + width/2;
+        // recursive calls
+        sierpinskiTriangle(newDepth,newWidth,newHeight,top1,left1);
+        sierpinskiTriangle(newDepth,newWidth,newHeight,top2,left2);
+        sierpinskiTriangle(newDepth,newWidth,newHeight,top3,left3);
+    }
+    // draw triangle
+    function drawTriangle(xa,xb,xc,ya,yb,yc){
         context.fillStyle = color;
         context.beginPath();
         context.moveTo(xa,ya);
