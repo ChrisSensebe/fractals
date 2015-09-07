@@ -19,8 +19,8 @@ $('.redraw').change(function(){
 function drawFractal(){
     color           = $('#color').val();
     backgroundColor = $('#backgroundColor').val();
-    canvas = $('#canvas').get(0);
-    context = canvas.getContext('2d');
+    canvas          = $('#canvas').get(0);
+    context         = canvas.getContext('2d');
     canvasHeight    = canvas.height;
     canvasWidth     = canvas.width;
     clearRect();
